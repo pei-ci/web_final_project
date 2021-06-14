@@ -13,6 +13,8 @@ class App extends React.Component {
         super(props);
         this.state = { postData:[{id:'',title:'',author:'',content:'',photo:''}],
                         };
+        ReactGA.initialize('G-TD33CFN1VP');
+        ReactGA.pageview(window.location.pathname + window.location.search);
       }
       componentDidMount(){
         fetch("https://hellojdango.herokuapp.com/list")
@@ -22,8 +24,6 @@ class App extends React.Component {
                 //console.log(data)
                 this.setState({postData:data})
             });
-        ReactGA.initialize('G-TD33CFN1VP');
-        ReactGA.pageview(window.location.pathname + window.location.search);
       }
 render(){
     return (
