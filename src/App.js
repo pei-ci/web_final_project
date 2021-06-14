@@ -8,15 +8,17 @@ import Post from './pages/post_page';
 import Content from "./pages/content";
 import AuthorInfo from "./pages/author_info_page"
 import ReactGA from 'react-ga';
+ReactGA.initialize('G-TD33CFN1VP');
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = { postData:[{id:'',title:'',author:'',content:'',photo:''}],
                         };
-        ReactGA.initialize('G-TD33CFN1VP');
-        ReactGA.pageview(window.location.pathname + window.location.search);
+        
+        
       }
       componentDidMount(){
+        ReactGA.pageview(window.location.pathname + window.location.search);
         fetch("https://hellojdango.herokuapp.com/list")
         .then((response) => response.json())
         .then((data) => 
