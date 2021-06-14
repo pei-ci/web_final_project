@@ -22,6 +22,8 @@ class App extends React.Component {
                 //console.log(data)
                 this.setState({postData:data})
             });
+        ReactGA.initialize('G-TD33CFN1VP');
+        ReactGA.pageview(window.location.pathname + window.location.search);
       }
 render(){
     return (
