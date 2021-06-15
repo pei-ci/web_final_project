@@ -36,10 +36,10 @@ class Content extends React.Component{
                     <Paper style={this.paperStyle} fixed>
                         
                         <Box align='left' >
-                        <p className='h6'>作者:{this.state.itemData[0].author}</p>
-                        
+                            <p className='h6'>作者:{this.state.itemData[0].author}</p>
+                            <p className='h6'>{this.state.itemData[0].content}</p>
                         </Box>
-                        <p className='h6'>{this.state.itemData[0].content}</p>
+                        
                     </Paper>
                 </Container>
                 
