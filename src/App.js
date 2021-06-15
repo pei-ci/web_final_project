@@ -8,7 +8,7 @@ import Post from './pages/post_page';
 import Content from "./pages/content";
 import AuthorInfo from "./pages/author_info_page"
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-TD33CFN1VP');
+ReactGA.initialize('G-WQCXYBLR94');
 
 class App extends React.Component {
     constructor(props) {
