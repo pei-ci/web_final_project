@@ -7,6 +7,7 @@ const Post = () =>{
     const [author,setAuthor]=useState('')
     const [content,setContent]=useState('')
     const [photo,setPhoto]=useState('')
+    const [error,setError]=useState('')
     const titleHandler = (event) => {
         setTitle(event.target.value);
     };
@@ -28,12 +29,17 @@ const Post = () =>{
     }
   
     const summit=()=>{
-        let url="https://hellojdango.herokuapp.com/add?title="+title+"&author="+author+"&content="+content+"&photo="+photo
-        fetch(url)
-        .then(response => response.json())
-        .then(result=>{
-            redirect(result.data)
-        });
+        if (title!=='' & author!=='' & content!=='' & photo!==''){
+            let url="https://hellojdango.herokuapp.com/add?title="+title+"&author="+author+"&content="+content+"&photo="+photo
+            fetch(url)
+            .then(response => response.json())
+            .then(result=>{
+                redirect(result.data)
+            });
+        }
+        else{
+            setError('無法送出 檢查欄位是否都有輸入')
+        }
             
     };
     const textfieldStyle={margin:'5px auto'}
@@ -88,6 +94,7 @@ const Post = () =>{
         <Button onClick={summit} style={buttonStyle} align='center' fullWidth>張貼
         
         </Button>
+        <h6>{error}</h6>
         </div>
     );
 }
